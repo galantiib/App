@@ -10,11 +10,11 @@ const Contact = () => {
         </p>
 
         <form>
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email Address" required />
-          <input type="text" placeholder="Subject" />
-          <textarea placeholder="Your Message" />
-          <button className="messagebtn" type="submit">Send Message</button>
+          <input type="text" placeholder="Emri i Plotë" required />
+          <input type="email" placeholder="Email " required />
+          <input type="text" placeholder="Subjekti" />
+          <textarea placeholder="Mesazhi yt " />
+          <button className="messagebtn" type="submit">Dërgo</button>
         </form>
       </section>
     </Layout>

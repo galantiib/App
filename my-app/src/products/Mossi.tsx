@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../Layout.tsx";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 interface Product {
   id: number;
@@ -14,7 +14,7 @@ const Mossi = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
  
   useEffect(() => {
     const fetchMossiLondonProducts = async () => {
@@ -49,17 +49,12 @@ const Mossi = () => {
   }
 
   
-  const backTo = () =>{
-    navigate("/products")
-  }
- 
   return (
  
     <Layout>
     <section className="section1">
     <div>  
       <h1 className="mossih1">The Mossi London Products</h1>
-    <button onClick={backTo} className="backbtn">Back</button>
       {products.length === 0 && <p>No products found.</p>}
 
       <div style={{ display: "grid", gap: "16px" }}>
