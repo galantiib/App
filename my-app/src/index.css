@@ -255,3 +255,26 @@ background-color: var(--primary);
 .mossih1{
   color:var(--primary);
 }
+
+.allh3{
+  color: var(--primary);
+}
+
+
+
+.backbtn {
+  background-color: var(--primary);  
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.backbtn:hover {
+  background-color: var(--accent);
+  transform: translateY(-1px);
+}

@@ -64,7 +64,7 @@ const Forvax = () => {
               borderRadius: "8px",
             }}
           >
-            <h3>{product.name}</h3>
+            <h3 className="allh3">{product.name}</h3>
             <p>{product.description}</p>
             <p>
               <strong>Components:</strong> {product.components}
