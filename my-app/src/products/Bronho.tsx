@@ -14,6 +14,14 @@ const Bronho = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const productImages: Record<number, string> = {
+    6: "/partners/pictures/surup1.png",
+    7: "/partners/pictures/surupkids.png",
+    8: "/partners/pictures/protect.png",
+    9: "/partners/pictures/pastile.png",
+    10: "/partners/pictures/lepistra.png",
+  };
+
   useEffect(() => {
     const fetchBronhoMaxProducts = async () => {
       try {
@@ -48,35 +56,53 @@ const Bronho = () => {
 
   return (
     <Layout>
-    <section className="section1">
-    <div>
-      <h1>BronhoMax Products</h1>
+      <section className="section1">
+        <div>
+          <h1 className="allh1">BronhoMax Products</h1>
 
-      {products.length === 0 && <p>No products found.</p>}
+          {products.length === 0 && <p>No products found.</p>}
 
-      <div style={{ display: "grid", gap: "16px" }}>
-        {products.map((product) => (
-          <div
-            key={product.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "12px",
-              borderRadius: "8px",
-            }}
-          >
-            <h3 className="allh3">{product.name}</h3>
-            <p>{product.description}</p>
-            <p>
-              <strong>Components:</strong> {product.components}
-            </p>
-            <p>
-              <strong>Price:</strong> {product.price.toFixed(2)} €
-            </p>
+          <div style={{ display: "grid", gap: "16px" }}>
+            {products.map((product) => (
+              <div
+                key={product.id}
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "16px",
+                  borderRadius: "8px",
+                  display: "flex",
+                  gap: "20px",
+                  alignItems: "flex-start",
+                }}
+              >
+                <img
+                  src={
+                    productImages[product.id] ||
+                    "/partners/pictures/default.png"
+                  }
+                  alt={product.name}
+                  style={{
+                    width: "150px",
+                    height: "auto",
+                    borderRadius: "8px",
+                  }}
+                />
+
+                <div>
+                  <h3 className="allh3">{product.name}</h3>
+                  <p>{product.description}</p>
+                  <p>
+                    <strong>Components:</strong> {product.components}
+                  </p>
+                  <p>
+                    <strong>Price:</strong> {product.price.toFixed(2)} €
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
-    </section>
+        </div>
+      </section>
     </Layout>
   );
 };

@@ -14,6 +14,12 @@ const Hemo = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // ✅ Image mapping for HemoMax products
+  const productImages: Record<number, string> = {
+    29: "/partners/pictures/hemogel.png",
+    30: "/partners/pictures/hemokrem.png",
+  };
+
   useEffect(() => {
     const fetchHemoMaxProducts = async () => {
       try {
@@ -22,7 +28,7 @@ const Hemo = () => {
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch CarboSil products");
+          throw new Error("Failed to fetch HemoMax products");
         }
 
         const data: Product[] = await response.json();
@@ -48,35 +54,56 @@ const Hemo = () => {
 
   return (
     <Layout>
-    <section className="section1">
-    <div>
-      <h1>HemoMax  Products</h1>
+      <section className="section1">
+        <div>
+          <h1 className="allh1">HemoMax Products</h1>
 
-      {products.length === 0 && <p>No products found.</p>}
+          {products.length === 0 && <p>No products found.</p>}
 
-      <div style={{ display: "grid", gap: "16px" }}>
-        {products.map((product) => (
-          <div
-            key={product.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "12px",
-              borderRadius: "8px",
-            }}
-          >
-            <h3 className="allh3">{product.name}</h3>
-            <p>{product.description}</p>
-            <p>
-              <strong>Components:</strong> {product.components}
-            </p>
-            <p>
-              <strong>Price:</strong> {product.price.toFixed(2)} €
-            </p>
+          <div style={{ display: "grid", gap: "16px" }}>
+            {products.map((product) => (
+              <div
+                key={product.id}
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "16px",
+                  borderRadius: "8px",
+                  display: "flex",
+                  gap: "20px",
+                  alignItems: "flex-start",
+                }}
+              >
+                {/* Product Image */}
+                <img
+                  src={
+                    productImages[product.id] ||
+                    "/partners/pictures/default.png"
+                  }
+                  alt={product.name}
+                  style={{
+                    width: "150px",
+                    height: "auto",
+                    borderRadius: "8px",
+                  }}
+                />
+
+                {/* Product Info */}
+                <div>
+                  <h3 className="allh3">{product.name}</h3>
+                  <p>{product.description}</p>
+                  <p>
+                    <strong>Components:</strong> {product.components}
+                  </p>
+                  <p>
+                    <strong>Price:</strong> {product.price.toFixed(2)} €
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
-    </section></Layout>
+        </div>
+      </section>
+    </Layout>
   );
 };
 

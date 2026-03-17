@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../Layout.tsx";
-// import { useNavigate } from "react-router-dom";
 
 interface Product {
   id: number;
@@ -14,8 +13,15 @@ const Mossi = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  // const navigate = useNavigate();
- 
+
+  const productImages: Record<number, string> = {
+    1: "/partners/pictures/vitamin.png",
+    2: "/partners/pictures/hairloss.jpeg",
+    3: "/partners/pictures/hairlosswomen.png",
+    4: "/partners/pictures/6monthset.png",
+    5: "/partners/pictures/3monthset.png",
+  };
+
   useEffect(() => {
     const fetchMossiLondonProducts = async () => {
       try {
@@ -48,43 +54,55 @@ const Mossi = () => {
     return <p>{error}</p>;
   }
 
-  
   return (
- 
     <Layout>
-    <section className="section1">
-    <div>  
-      <h1 className="mossih1">The Mossi London Products</h1>
-      {products.length === 0 && <p>No products found.</p>}
+      <section className="section1">
+        <div>
+          <h1 className="allh1">The Mossi London Products</h1>
 
-      <div style={{ display: "grid", gap: "16px" }}>
-        {products.map((product) => (
-          <div
-             key={product.id}
-              style={{
-                border: "1px solid #ccc",
-                padding: "12px",
-                borderRadius: "8px",
-                display:"",              
-                justifyContent: "space-between", 
-                alignItems: "flex-start",     
-                gap: "20px",                
-              }}
-          >
-            <h3 className="allh3">{product.name}</h3>
-            <p>{product.description}</p>
-            <p>
-              <strong>Components:</strong> {product.components}
-            </p>
-            <p>
-              <strong>Price:</strong> {product.price.toFixed(2)} €
-            </p>
-            {/* <img src="/partners/pictures/vitamin.png" className="partner-logo" /> */}
+          {products.length === 0 && <p>No products found.</p>}
+
+          <div style={{ display: "grid", gap: "16px" }}>
+            {products.map((product) => (
+              <div
+                key={product.id}
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "16px",
+                  borderRadius: "8px",
+                  display: "flex",
+                  gap: "20px",
+                  alignItems: "flex-start",
+                }}
+              >
+                <img
+                  src={
+                    productImages[product.id] ||
+                    "/partners/pictures/default.png"
+                  }
+                  alt={product.name}
+                  style={{
+                    width: "150px",
+                    height: "auto",
+                    borderRadius: "8px",
+                  }}
+                />
+
+                <div>
+                  <h3 className="allh3">{product.name}</h3>
+                  <p>{product.description}</p>
+                  <p>
+                    <strong>Components:</strong> {product.components}
+                  </p>
+                  <p>
+                    <strong>Price:</strong> {product.price.toFixed(2)} €
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
-    </section>
+        </div>
+      </section>
     </Layout>
   );
 };
