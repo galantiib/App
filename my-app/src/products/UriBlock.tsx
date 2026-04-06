@@ -70,7 +70,6 @@ const UriBlock = () => {
                   borderRadius: "8px",
                   display: "flex",
                   gap: "20px",
-                  alignItems: "flex-start",
                 }}
               >
                 <img
@@ -80,7 +79,7 @@ const UriBlock = () => {
                   }
                   alt={product.name}
                   style={{
-                    width: "150px",
+                    width: "300px",
                     height: "auto",
                     borderRadius: "8px",
                   }}
