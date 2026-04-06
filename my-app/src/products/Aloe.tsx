@@ -79,7 +79,7 @@ const AloeVera = () => {
                   alt={product.name}
                   style={{
                     width: "300px",
-                    height: "auto",
+                    height: "400px",
                     borderRadius: "8px",
                   }}
                 />

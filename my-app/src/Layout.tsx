@@ -13,8 +13,8 @@ export const Layout = ({ children }: LayoutProps) => {
         <nav>
           <Link to="/about">Rreth OZZOPharm</Link>
           <Link to="/products">Produktet</Link>
-          <Link to="/contact">Kontakt</Link>
           <Link to="/partners">Partnerët</Link>
+          <Link to="/contact">Kontakt</Link>
         </nav>
       </header>
 

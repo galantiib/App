@@ -16,8 +16,8 @@ const Fornos = () => {
 
   const productImages: Record<number, string> = {
     19: "/partners/pictures/fornos.png",
-    20: "/partners/pictures/fornosforte.png",
-    21: "/partners/pictures/fornoscare.png",
+    21: "/partners/pictures/fornosforte.png",
+    20: "/partners/pictures/fornoscare.png",
   };
 
   useEffect(() => {

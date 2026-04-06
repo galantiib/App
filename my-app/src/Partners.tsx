@@ -16,7 +16,7 @@ const Partners = () => {
             <p>
               Një kompani farmaceutike evropiane e specializuar në zhvillimin e suplementeve dhe produkteve medicinale sipas standardeve GMP.
             </p>
-            <img src="/partners/hamapharm.png" className="partner-logo" />
+            <img src="/partners/hamapharm.png" className="partner-logo1" />
           </div>
 
           <div className="partner-card">
@@ -24,7 +24,7 @@ const Partners = () => {
             <p>
               Brand britanik i njohur për produktet premium për kujdesin e flokëve dhe suplementet dermatologjike.
             </p>
-            <img src="/partners/mossi.png" className="partner-logo" />
+            <img src="/partners/mossi.png" className="partner-logo2" />
           </div>
 
           <div className="partner-card">
@@ -32,15 +32,15 @@ const Partners = () => {
             <p>
              Ozone Hir Clinic është një klinikë e specializuar që përqendrohet në shëndetin e flokëve dhe të skalpit të kokës. 
             </p>
-            <img src="/partners/ozone.png" className="partner-logo" />
+            <img src="/partners/ozone.png" className="partner-logo3" />
           </div>
 
           <div className="partner-card">
             <h3>Ozone Pharmacy</h3>
             <p>
-             Ozone Pharmacy është një vend ku njerëzit mund të marrin ilaçe, vitamina, suplemente dhe produkte të tjera të kujdesit shëndetësor. 
+             Ozone Pharmacy është ndër farmacitë me të mëdhaja në Kosovë ku njerëzit mund të marrin ilaçe, vitamina, suplemente dhe produkte të tjera të kujdesit shëndetësor. 
             </p>
-            <img src="/partners/pharmacy.png" className="partner-logo" />
+            <img src="/partners/pharmacy.png" className="partner-logo4" />
           </div>
 
           <div className="partner-card">
@@ -48,7 +48,7 @@ const Partners = () => {
             <p>
               Prodhues turk i certifikuar në industrinë farmaceutike dhe kozmetike me teknologji moderne dhe standarde ndërkombëtare.
             </p>
-            <img src="/partners/atilim.png" className="partner-logo" />
+            <img src="/partners/atilim.png" className="partner-logo5" />
           </div>
         </div>
       </section>
