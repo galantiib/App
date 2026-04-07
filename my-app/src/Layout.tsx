@@ -11,10 +11,10 @@ export const Layout = ({ children }: LayoutProps) => {
       <header>
         <h1><span className="ozzo">ozzo</span>Pharm</h1>
         <nav>
-          <Link to="/about">Rreth OZZOPharm</Link>
+          <Link to="/about">Rreth nesh</Link>
           <Link to="/products">Produktet</Link>
           <Link to="/partners">Partnerët</Link>
-          <Link to="/contact">Kontakt</Link>
+          <Link to="/contact">Na Kontaktoni</Link>
         </nav>
       </header>
 

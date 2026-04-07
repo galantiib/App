@@ -108,6 +108,44 @@ nav a:hover {
   max-width: 750px;
 }
 
+
+.sectiong {
+  background: transparent;
+  padding: 0;
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+.sectiong h2 {
+  font-size: 34px;
+  font-weight: 750;
+  color: var(--primary);
+  margin-bottom: 14px;
+  margin-left: 340px;
+}
+
+
+.sectiong p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 24px;
+  max-width: 750px;
+  margin-left: 130px;
+}
+
+.pspan{
+  margin-left: 150px;
+}
+
+.pspan1{
+  margin-left: 145px;
+}
+
+.pspan2{
+  margin-left: 240px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -147,7 +185,7 @@ footer {
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
   padding: 50px 20px;
-  margin-top: 70px;
+  margin-top: 200px;
   font-size: 14px;
 }
 
@@ -205,6 +243,10 @@ textarea {
   font-weight: 800;
   color: var(--primary);
 }
+
+/* .ozzo3{
+  margin-left: 340px;
+} */
 
 .carousel-section {
   position: relative;
@@ -309,15 +351,14 @@ textarea {
   width: auto;
   margin-top: 22px;
   object-fit: contain;
-  opacity: 0.7;
   margin-left: 50px;
+  border-radius: 100px;
 }
 .partner-logo2 {
   height: 150px;
   width: auto;
   margin-top: 22px;
   object-fit: contain;
-  opacity: 0.7;
   margin-left: 40px;
 }
 
@@ -326,16 +367,14 @@ textarea {
   width: auto;
   margin-top: 22px;
   object-fit: contain;
-  opacity: 0.7;
   margin-left: 10px;
+  border-radius: 40px;
 }
 
 .partner-logo4 {
   height: 150px;
   width: auto;
-  margin-top: 22px;
   object-fit: contain;
-  opacity: 1;
   margin-left: 30px;
 }
 
@@ -344,7 +383,6 @@ textarea {
   width: auto;
   margin-top: 22px;
   object-fit: contain;
-  opacity: 0.7;
   margin-left: 15px;
 }
 

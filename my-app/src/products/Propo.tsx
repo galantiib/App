@@ -56,7 +56,7 @@ const Propo = () => {
     <Layout>
       <section className="section1">
         <div>
-          <h1 className="allh1">MiVita Products</h1>
+          <h1 className="allh1">PropoMax Products</h1>
 
           {products.length === 0 && <p>No products found.</p>}
 
@@ -79,9 +79,11 @@ const Propo = () => {
                   }
                   alt={product.name}
                   style={{
-                    width: "300px",
-                    height: "auto",
+                    width: "350px",
+                    height: "400px",
                     borderRadius: "8px",
+                    
+
                   }}
                 />
 

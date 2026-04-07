@@ -14,7 +14,7 @@ const Partners = () => {
           <div className="partner-card">
             <h3>Hamapharm</h3>
             <p>
-              Një kompani farmaceutike evropiane e specializuar në zhvillimin e suplementeve dhe produkteve medicinale sipas standardeve GMP.
+              Hamapharm është një prodhues kroat i pajisjeve mjekësore, shtesave ushqimore dhe kozmetikës. Ofrojnë Etiketë Private, Prodhim me Kontratë dhe Shpërndarje të gatshme — nga koncepti deri në raft, të mbështetur nga GMP Codex Alimentarius dhe ISO 13485.
             </p>
             <img src="/partners/hamapharm.png" className="partner-logo1" />
           </div>
@@ -22,7 +22,7 @@ const Partners = () => {
           <div className="partner-card">
             <h3>The Mossi London</h3>
             <p>
-              Brand britanik i njohur për produktet premium për kujdesin e flokëve dhe suplementet dermatologjike.
+              Mossi London është një markë e specializuar për kujdesin e flokëve që përqendrohet në produktet kundër rënies së flokëve, të dizajnuara veçanërisht për përdorim pas transplantimit të flokëve. Gama e tyre përfshin shampo, serume dhe vitamina të formuluara për të nxitur rritjen e flokëve.
             </p>
             <img src="/partners/mossi.png" className="partner-logo2" />
           </div>
@@ -30,7 +30,7 @@ const Partners = () => {
           <div className="partner-card">
             <h3>Ozone Hair Clinic</h3>
             <p>
-             Ozone Hir Clinic është një klinikë e specializuar që përqendrohet në shëndetin e flokëve dhe të skalpit të kokës. 
+             Klinika e Flokëve Ozone është një klinikë lider në Ballkan në trajtimet më të mira për rënien e flokëve tek meshkujt dhe femrat. Synojnë ta bëjnë operacionin tuaj të transplantimit të flokëve dhe përvojat e restaurimit të flokëve sa më të këndshme të jetë e mundur.
             </p>
             <img src="/partners/ozone.png" className="partner-logo3" />
           </div>

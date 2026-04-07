@@ -115,7 +115,7 @@ navigate("/veno")
             <h3>Fornos</h3>
           </div>
           <div onClick={Imuno} className="card">
-            <h3>Imuno SUPER BOOSTER</h3>
+            <h3>Imuno Super BOOSTER</h3>
           </div>
           <div onClick={Ginginox} className="card">
             <h3>Ginginox</h3>

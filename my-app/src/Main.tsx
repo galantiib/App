@@ -21,17 +21,17 @@ const About = () => {
 
   return (
     <Layout>
-      <section className="section">
-        <h2>Rreth <span className="ozzo2">ozzo</span>Pharm</h2>
+      <section className="sectiong">
+        <h2 className="ozzo3">Rreth <span className="ozzo2">ozzo</span>Pharm</h2>
 
         <p>
-          Ozzo Pharm është një kompani farmaceutike e përkushtuar për të çuar përpara kujdesin shëndetësor global përmes inovacionit, integritetit shkencor dhe përsosmërisë.
+          Ozzo Pharm është një kompani farmaceutike e përkushtuar për të çuar përpara kujdesin shëndetësor global <span className="pspan">përmes inovacionit, integritetit shkencor dhe përsosmërisë.</span> 
         </p>
         <p>
-          Zhvillimi ynë i bazuar në kërkime siguron që çdo produkt të përmbushë standardet rregullatore ndërkombëtare dhe të ofrojë vlerë të matshme për pacientin.
+          Zhvillimi ynë i bazuar në kërkime siguron që çdo produkt të përmbushë standardet rregullatore <span className="pspan1">ndërkombëtare dhe të ofrojë vlerë të matshme për pacientin.</span>
         </p>
         <p>
-          Ne bashkëpunojmë ngushtë me profesionistë të kujdesit shëndetësor për të përmirësuar jetën përmes ilaçeve të sigurta, efektive dhe të arritshme.
+          Ne bashkëpunojmë ngushtë me profesionistë të kujdesit shëndetësor për të përmirësuar jetën përmes ilaçeve <span className="pspan2">të sigurta, efektive dhe të arritshme.</span> 
         </p>
         </section>
 

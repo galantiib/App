@@ -79,7 +79,7 @@ const Imuno = () => {
                   }
                   alt={product.name}
                   style={{
-                    width: "300px",
+                    width: "",
                     height: "auto",
                     borderRadius: "8px",
                   }}

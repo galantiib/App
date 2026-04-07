@@ -82,9 +82,10 @@ const Mossi = () => {
                   }
                   alt={product.name}
                   style={{
-                    width: "280px",
-                    height: "380px",
-                    borderRadius: "8px",
+                    width: product.id === 1 ? "350px" : "280px",
+                    height: product.id === 1 ? "450px" : "380px",
+                    borderRadius: product.id === 1 ? "20px" : "8px",
+                    objectFit: "contain",
                   }}
                 />
 
