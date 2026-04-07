@@ -25,6 +25,10 @@ body {
   overflow-x: hidden;
 }
 
+.pharm{
+margin-left: 9px;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -34,7 +38,7 @@ body::before {
   background-size: 120px;
   background-position: center;
 
-  transform: rotate(-18deg);
+  transform: rotate(0deg);
 
   opacity: 0.2;
   filter: saturate(0.7) blur(0.4px);
@@ -47,10 +51,12 @@ header {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   padding: 18px 80px;
-  border-bottom: var(--border);
+  border-bottom:solid 2px #a1d6ed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
+
 }
 
 header h1 {
@@ -65,7 +71,7 @@ nav a {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 20px;
   transition: var(--transition);
 }
 
@@ -81,6 +87,7 @@ nav a:hover {
   max-width: 1100px;
   margin: auto;
   margin-top: 30px;
+  border: solid #a1d6ed 2px;
 }
 
 .section,
@@ -153,7 +160,7 @@ nav a:hover {
 }
 
 .card {
-  background: white;
+  background: #a1d6ed;
   padding: 28px;
   border-radius: var(--radius);
   border: var(--border);
@@ -168,8 +175,8 @@ nav a:hover {
 }
 
 .card h3 {
-  color: var(--primary);
-  font-size: 18px;
+  color: white;
+  font-size: 25px;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -266,7 +273,7 @@ textarea {
   padding: 70px 60px;
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.95);
-  border: var(--border);
+  border: solid #a1d6ed 2px ;
   box-shadow: var(--shadow-md);
   text-align: center;
 }
@@ -326,6 +333,7 @@ textarea {
   border: var(--border);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  border: solid #a1d6ed 2px;
 }
 
 .partner-card:hover {

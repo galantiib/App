@@ -9,7 +9,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <header>
-        <h1><span className="ozzo">ozzo</span>Pharm</h1>
+        <h1 className="pharm"><span className="ozzo">Ozzo</span >Pharm</h1>
         <nav>
           <Link to="/about">Rreth nesh</Link>
           <Link to="/products">Produktet</Link>
