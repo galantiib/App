@@ -403,3 +403,12 @@ textarea {
   color: var(--primary);
   font-weight: 700;
 }
+
+.carousel-img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  border-radius: 18px;
+  display: block;
+  margin: auto;
+}
