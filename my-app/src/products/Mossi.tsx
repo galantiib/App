@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../Layout.tsx";
+import ProductBackButton from "./ProductBackButton.tsx";
 
 interface Product {
   id: number;
@@ -58,6 +59,7 @@ const Mossi = () => {
     <Layout>
       <section className="section1">
         <div>
+          <ProductBackButton />
           <h1 className="allh1">The Mossi London Products</h1>
 
           {products.length === 0 && <p>No products found.</p>}

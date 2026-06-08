@@ -408,3 +408,32 @@ textarea {
 
 
 
+
+
+.product-back-button {
+  background: transparent;
+  color: var(--accent);
+  border: solid 2px var(--primary);
+  border-radius: 12px;
+  padding: 10px 16px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.product-back-button:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  border-radius: 18px;
+  display: block;
+  margin: auto;
+}

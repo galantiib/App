@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../Layout.tsx";
+import ProductBackButton from "./ProductBackButton.tsx";
 
 interface Product {
   id: number;
@@ -56,6 +57,7 @@ const Imuno = () => {
     <Layout>
       <section className="section1">
         <div>
+          <ProductBackButton />
           <h1 className="allh1">Imuno Super Booster Products</h1>
 
           {products.length === 0 && <p>No products found.</p>}

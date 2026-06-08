@@ -1,45 +1,23 @@
- import { useEffect, useState } from "react";
- import { Layout } from "./Layout.tsx";
- 
- const slides = [
-   {
-     image: "/partners/pictures/vitamin.png",
-     alt: "Slide 1"
-   },
-   {
-     image: "/partners/pictures/neuro.png",
-     alt: "Slide 2"
-   },
-   {
-     image: "/partners/pictures/surup1.png",
-     alt: "Slide 3"
-   },
-   {
-     image: "/partners/pictures/carbo.png",
-     alt: "Slide 4"
-   },
-   {
-     image: "/partners/pictures/uriblock.png",
-     alt: "Slide 5"
-   },
-   {
-     image: "/partners/pictures/forvax.png",
-     alt: "Slide 5"
-   }
- ];
+import { useState } from "react";
+import { Layout } from "./Layout.tsx";
 
-
+const slides = [
+  {
+    title: "Misioni Ynë",
+    text: "Të ofrojmë produkte farmaceutike të sigurta, efektive dhe të certifikuara ndërkombëtarisht që përmirësojnë jetën e pacientëve."
+  },
+  {
+    title: "Vizioni",
+    text: "Të bëhemi një lider rajonal në industrinë farmaceutike përmes inovacionit dhe standardeve të larta shkencore."
+  },
+  {
+    title: "Vlerat",
+    text: "Integritet, cilësi, transparencë dhe përkushtim maksimal ndaj shëndetit të njeriut."
+  }
+];
 
 const About = () => {
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 1500);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <Layout>
@@ -71,19 +49,17 @@ const About = () => {
         </p>
       </section>
 
-      <div className="carousel-section">
-        <div className="carousel">
-          <div className="carousel-card">
+        <div className="carousel-section">
+  <div className="carousel">
+    <div className="carousel-card">
+      <button className="carousel-arrow left" onClick={() => setIndex((index + 2) % 3)}>‹</button>
+      <h3>{slides[index].title}</h3>
+      <p>{slides[index].text}</p>
+      <button className="carousel-arrow right" onClick={() => setIndex((index + 1) % 3)}>›</button>
+    </div>
+  </div>
+</div>
 
-            <img
-              src={slides[index].image}
-              alt={slides[index].alt}
-              className="carousel-img"
-            />
-
-          </div>
-        </div>
-      </div>
     </Layout>
   );
 };
