@@ -91,6 +91,7 @@ navigate("/veno")
 
 
 
+
   return (
     <Layout>
       <section className="section">
@@ -167,7 +168,6 @@ navigate("/veno")
     </Layout>
   );
 };
-
 export default Products;
 
 
