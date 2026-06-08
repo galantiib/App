@@ -9,7 +9,7 @@ const ProductBackButton = () => {
       className="product-back-button"
       onClick={() => navigate("/products")}
     >
-      Back to products
+      ← Produktet
     </button>
   );
 };

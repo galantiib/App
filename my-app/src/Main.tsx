@@ -3,63 +3,133 @@ import { Layout } from "./Layout.tsx";
 
 const slides = [
   {
+    eyebrow: "Kujdes i certifikuar",
     title: "Misioni Ynë",
-    text: "Të ofrojmë produkte farmaceutike të sigurta, efektive dhe të certifikuara ndërkombëtarisht që përmirësojnë jetën e pacientëve."
+    text: "Të ofrojmë produkte farmaceutike të sigurta, efektive dhe të certifikuara ndërkombëtarisht që përmirësojnë jetën e pacientëve.",
+    metric: "Standarde GMP",
   },
   {
+    eyebrow: "Rritje rajonale",
     title: "Vizioni",
-    text: "Të bëhemi një lider rajonal në industrinë farmaceutike përmes inovacionit dhe standardeve të larta shkencore."
+    text: "Të bëhemi një lider rajonal në industrinë farmaceutike përmes inovacionit dhe standardeve të larta shkencore.",
+    metric: "Partneritet shkencor",
   },
   {
+    eyebrow: "Besim afatgjatë",
     title: "Vlerat",
-    text: "Integritet, cilësi, transparencë dhe përkushtim maksimal ndaj shëndetit të njeriut."
-  }
+    text: "Integritet, cilësi, transparencë dhe përkushtim maksimal ndaj shëndetit të njeriut.",
+    metric: "Cilësi pa kompromis",
+  },
+];
+
+const highlights = [
+  { value: "20+", label: "produkte në portofol" },
+  { value: "5", label: "partnerë strategjikë" },
+  { value: "GMP", label: "standard prodhimi" },
 ];
 
 const About = () => {
   const [index, setIndex] = useState(0);
+  const activeSlide = slides[index];
+  const slideCount = slides.length;
+  const previousSlide = () => setIndex((current) => (current + slideCount - 1) % slideCount);
+  const nextSlide = () => setIndex((current) => (current + 1) % slideCount);
 
   return (
     <Layout>
+      <section className="about-hero">
+        <div className="about-copy">
+          <span className="eyebrow">Ozzo Pharm</span>
+          <h2>
+            Kujdes farmaceutik me standard të lartë dhe fokus te pacienti.
+          </h2>
+          <p>
+            Ozzo Pharm është një kompani farmaceutike e përkushtuar për të çuar
+            përpara kujdesin shëndetësor përmes inovacionit, integritetit
+            shkencor dhe produkteve të sigurta.
+          </p>
+        </div>
+
+        <div className="about-panel" aria-label="Pikat kryesore">
+          <img src="/ozzo.png" alt="" className="about-logo" />
+          <div>
+            <strong>Research-led portfolio</strong>
+            <span>Produkte të zgjedhura për cilësi, siguri dhe vlerë klinike.</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="highlights-grid" aria-label="Përmbledhje">
+        {highlights.map((item) => (
+          <div className="highlight-card" key={item.label}>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </section>
+
       <section className="sectiong">
         <h2 className="ozzo3">
           Rreth <span className="ozzo2">Ozzo</span>Pharm
         </h2>
-
-        <p>
-          Ozzo Pharm është një kompani farmaceutike e përkushtuar për të çuar
-          përpara kujdesin shëndetësor global{" "}
-          <span className="pspan">
-            përmes inovacionit, integritetit shkencor dhe përsosmërisë.
-          </span>
-        </p>
         <p>
           Zhvillimi ynë i bazuar në kërkime siguron që çdo produkt të përmbushë
-          standardet rregullatore{" "}
-          <span className="pspan1">
-            ndërkombëtare dhe të ofrojë vlerë të matshme për pacientin.
-          </span>
+          standardet rregullatore ndërkombëtare dhe të ofrojë vlerë të matshme
+          për pacientin.
         </p>
         <p>
           Ne bashkëpunojmë ngushtë me profesionistë të kujdesit shëndetësor për
-          të përmirësuar jetën përmes ilaçeve{" "}
-          <span className="pspan2">
-            të sigurta, efektive dhe të arritshme.
-          </span>
+          të përmirësuar jetën përmes ilaçeve të sigurta, efektive dhe të arritshme.
         </p>
       </section>
 
-        <div className="carousel-section">
-  <div className="carousel">
-    <div className="carousel-card">
-      <button className="carousel-arrow left" onClick={() => setIndex((index + 2) % 3)}>‹</button>
-      <h3>{slides[index].title}</h3>
-      <p>{slides[index].text}</p>
-      <button className="carousel-arrow right" onClick={() => setIndex((index + 1) % 3)}>›</button>
-    </div>
-  </div>
-</div>
+      <section className="carousel-section" aria-label="Vlerat kryesore të Ozzo Pharm">
+        <div className="carousel">
+          <button
+            className="carousel-arrow left"
+            type="button"
+            aria-label="Shfaq sliden e mëparshëm"
+            onClick={previousSlide}
+          >
+            ‹
+          </button>
 
+          <article className="carousel-card">
+            <div className="carousel-kicker">{activeSlide.eyebrow}</div>
+            <div className="carousel-progress" aria-hidden="true">
+              <span style={{ width: `${((index + 1) / slideCount) * 100}%` }} />
+            </div>
+            <div className="carousel-count">
+              {String(index + 1).padStart(2, "0")} / {String(slideCount).padStart(2, "0")}
+            </div>
+            <h3>{activeSlide.title}</h3>
+            <p>{activeSlide.text}</p>
+            <div className="carousel-metric">{activeSlide.metric}</div>
+          </article>
+
+          <button
+            className="carousel-arrow right"
+            type="button"
+            aria-label="Shfaq sliden tjetër"
+            onClick={nextSlide}
+          >
+            ›
+          </button>
+        </div>
+
+        <div className="carousel-dots" aria-label="Zgjidh sliden">
+          {slides.map((slide, slideIndex) => (
+            <button
+              key={slide.title}
+              className={`carousel-dot ${slideIndex === index ? "active" : ""}`}
+              type="button"
+              aria-label={`Shfaq ${slide.title}`}
+              aria-current={slideIndex === index ? "true" : undefined}
+              onClick={() => setIndex(slideIndex)}
+            />
+          ))}
+        </div>
+      </section>
     </Layout>
   );
 };
