@@ -13,15 +13,16 @@
     "react-router-dom": "^7.9.5",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "homepage": "https://yourusername.github.io/repository-name",
-    "predeploy": "npm run build",
-"deploy": "gh-pages -d build"
+    "homepage": "https://galantiib.github.io/App"
+ 
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+      "predeploy": "npm run build",
+"deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
