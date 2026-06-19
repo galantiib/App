@@ -16,9 +16,9 @@ const Imuno = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    22: "/partners/pictures/imuno.png",
-    23: "/partners/pictures/imunokapsula.png",
-    24: "/partners/pictures/imunosirup.png",
+    22: "/app/partners/pictures/imuno.png",
+    23: "/app/partners/pictures/imunokapsula.png",
+    24: "/app/partners/pictures/imunosirup.png",
   };
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const Imuno = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

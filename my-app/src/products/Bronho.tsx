@@ -16,11 +16,11 @@ const Bronho = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    6: "/partners/pictures/surup1.png",
-    7: "/partners/pictures/surupkids.png",
-    8: "/partners/pictures/protect.png",
-    9: "/partners/pictures/pastile.png",
-    10: "/partners/pictures/lepistra.png",
+    6: "/app/partners/pictures/surup1.png",
+    7: "/app/partners/pictures/surupkids.png",
+    8: "/app/partners/pictures/protect.png",
+    9: "/app/partners/pictures/pastile.png",
+    10:"/app/partners/pictures/lepistra.png",
   };
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const Bronho = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

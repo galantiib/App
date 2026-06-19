@@ -17,8 +17,8 @@ const Hemo = () => {
 
   // ✅ Image mapping for HemoMax products
   const productImages: Record<number, string> = {
-    29: "/partners/pictures/hemogel.png",
-    30: "/partners/pictures/hemokrem.png",
+    29: "/app/partners/pictures/hemogel.png",
+    30: "/app/partners/pictures/hemokrem.png",
   };
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const Hemo = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

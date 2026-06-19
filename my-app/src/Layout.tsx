@@ -18,7 +18,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <header className="site-header">
         <div className="site-header-inner">
           <NavLink to="/about" className="site-logo" aria-label="Ozzo Pharm">
-            <img src="/ozzo.png" alt="" className="logo-mark" />
+            <img src="/app/ozzo.png" alt="" className="logo-mark" />
             <span className="brand-text">
               <span>Ozzo</span>Pharm
             </span>

@@ -16,7 +16,7 @@ const Cardio = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    13: "/partners/pictures/cardiomix.png",
+    13: "/app/partners/pictures/cardiomix.png",
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const Cardio = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

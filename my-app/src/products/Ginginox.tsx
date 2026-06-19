@@ -17,10 +17,10 @@ const Ginginox = () => {
 
   // ✅ Image mapping for Ginginox products
   const productImages: Record<number, string> = {
-    25: "/partners/pictures/ginginox.png",
-    26: "/partners/pictures/ginginoxspray.png",
-    27: "/partners/pictures/ginginoxgel.png",
-    28: "/partners/pictures/gintretesie.png",
+    25: "/app/partners/pictures/ginginox.png",
+    26: "/app/partners/pictures/ginginoxspray.png",
+    27: "/app/partners/pictures/ginginoxgel.png",
+    28: "/app/partners/pictures/gintretesie.png",
   };
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const Ginginox = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

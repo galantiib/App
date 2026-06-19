@@ -15,13 +15,13 @@ const Mossi = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const productImages: Record<number, string> = {
-    1: "/partners/pictures/vitamin.png",
-    2: "/partners/pictures/hairloss.jpeg",
-    3: "/partners/pictures/hairlosswomen.png",
-    4: "/partners/pictures/6monthset.png",
-    5: "/partners/pictures/3monthset.png",
-  };
+const productImages: Record<number, string> = {
+  1: "/app/partners/pictures/vitamin.png",
+  2: "/app/partners/pictures/hairloss.jpeg",
+  3: "/app/partners/pictures/hairlosswomen.png",
+  4: "/app/partners/pictures/6monthset.png",
+  5: "/app/partners/pictures/3monthset.png",
+};
 
   useEffect(() => {
     const fetchMossiLondonProducts = async () => {
@@ -78,10 +78,10 @@ const Mossi = () => {
                 }}
               >
                 <img
-                  src={
-                    productImages[product.id] ||
-                    "/partners/pictures/default.png"
-                  }
+                 src={
+                  productImages[product.id] ||
+                  "/app/partners/pictures/default.png"
+                }
                   alt={product.name}
                   style={{
                     width: product.id === 1 ? "350px" : "280px",

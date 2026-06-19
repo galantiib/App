@@ -16,7 +16,7 @@ const Daily = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages : Record<number, string> = {
-    14: "partners/pictures/daily.png"
+    14: "/app/partners/pictures/daily.png"
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const Daily = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

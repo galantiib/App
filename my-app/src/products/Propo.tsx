@@ -16,8 +16,8 @@ const Propo = () => {
   const [error, setError] = useState<string | null>(null);
 
    const productImages: Record<number, string> = {
-    37: "/partners/pictures/propomax.png",
-    38: "/partners/pictures/propomaxkids.png",
+    37: "/app/partners/pictures/propomax.png",
+    38: "/app/partners/pictures/propomaxkids.png",
   };
 
 
@@ -77,7 +77,7 @@ const Propo = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

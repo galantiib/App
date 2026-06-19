@@ -16,9 +16,9 @@ const UriBlock = () => {
   const [error, setError] = useState<string | null>(null);
 
    const productImages: Record<number, string> = {
-    42: "/partners/pictures/uriblock.png",
-    43: "/partners/pictures/uriblockgranula.png",
-    44: "/partners/pictures/uriblocksuplement.png",
+    42: "/app/partners/pictures/uriblock.png",
+    43: "/app/partners/pictures/uriblockgranula.png",
+    44: "/app/partners/pictures/uriblocksuplement.png",
   };
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const UriBlock = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

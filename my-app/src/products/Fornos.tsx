@@ -16,9 +16,9 @@ const Fornos = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    19: "/partners/pictures/fornos.png",
-    21: "/partners/pictures/fornosforte.png",
-    20: "/partners/pictures/fornoscare.png",
+    19: "/app/partners/pictures/fornos.png",
+    21: "/app/partners/pictures/fornosforte.png",
+    20: "/app/partners/pictures/fornoscare.png",
   };
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const Fornos = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

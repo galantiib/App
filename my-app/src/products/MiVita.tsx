@@ -16,9 +16,9 @@ const MiVita = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    33: "/partners/pictures/mivita.png",
-    34: "/partners/pictures/mivitagranula.png",
-    35: "/partners/pictures/mivitatableta.png",
+    33: "/app/partners/pictures/mivita.png",
+    34: "/app/partners/pictures/mivitagranula.png",
+    35: "/app/partners/pictures/mivitatableta.png",
   };
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const MiVita = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

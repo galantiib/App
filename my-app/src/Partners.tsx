@@ -3,31 +3,31 @@ import { Layout } from "./Layout.tsx";
 const partners = [
   {
     name: "Hamapharm",
-    image: "/partners/hamapharm.png",
+    image: "/app/partners/hamapharm.png",
     description:
       "Prodhues kroat i pajisjeve mjekësore, shtesave ushqimore dhe kozmetikës, me kapacitete për etiketë private, prodhim me kontratë dhe shpërndarje të gatshme.",
   },
   {
     name: "The Mossi London",
-    image: "/partners/mossi.png",
+    image: "/app/partners/mossi.png",
     description:
       "Markë e specializuar në kujdesin e flokëve, me produkte kundër rënies së flokëve dhe formulime për përdorim pas transplantimit.",
   },
   {
     name: "Ozone Hair Clinic",
-    image: "/partners/ozone.png",
+    image: "/app/partners/ozone.png",
     description:
       "Klinikë e fokusuar në trajtime moderne për rënien e flokëve dhe restaurimin e flokëve në Ballkan.",
   },
   {
     name: "Ozone Pharmacy",
-    image: "/partners/pharmacy.png",
+    image: "/app/partners/pharmacy.png",
     description:
       "Farmaci me portofol të gjerë ilaçesh, vitaminash, suplementesh dhe produktesh të kujdesit shëndetësor.",
   },
   {
     name: "Atilim Turkey",
-    image: "/partners/atilim.png",
+    image: "/app/partners/atilim.png",
     description:
       "Prodhues turk i certifikuar në industrinë farmaceutike dhe kozmetike, me teknologji moderne dhe standarde ndërkombëtare.",
   },

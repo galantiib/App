@@ -16,8 +16,8 @@ const Magnez = () => {
   const [error, setError] = useState<string | null>(null);
 
    const productImages: Record<number, string> = {
-    40: "/partners/pictures/trimagnezij.png",
-    41: "/partners/pictures/trimagnezijkapsula.png",
+    40: "/app/partners/pictures/trimagnezij.png",
+    41: "/app/partners/pictures/trimagnezijkapsula.png",
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const Magnez = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

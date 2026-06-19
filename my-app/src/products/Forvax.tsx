@@ -16,7 +16,7 @@ const Forvax = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages : Record<number, string> = {
-    31: "partners/pictures/forvax.png"
+    31: "/app/partners/pictures/forvax.png"
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const Forvax = () => {
                 <img
                   src={
                     productImages[product.id] ||
-                    "/partners/pictures/default.png"
+                    "/app/partners/pictures/default.png"
                   }
                   alt={product.name}
                   style={{

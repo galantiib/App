@@ -53,7 +53,7 @@ const About = () => {
         <div className="about-panel" aria-label="Pikat kryesore">
           <img src="/ozzo.png" alt="" className="about-logo" />
           <div>
-            <strong>Research-led portfolio</strong>
+            <strong>Portofoli i hulumtuar</strong>
             <span>Produkte të zgjedhura për cilësi, siguri dhe vlerë klinike.</span>
           </div>
         </div>
