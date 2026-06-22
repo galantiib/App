@@ -9,6 +9,7 @@ const navItems = [
   { to: "/about", label: "Rreth nesh" },
   { to: "/products", label: "Produktet" },
   { to: "/partners", label: "Partnerët" },
+  { to: "/keshilla", label: "Këshilla" },
   { to: "/contact", label: "Kontakt" },
 ];
 

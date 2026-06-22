@@ -3,6 +3,7 @@ import About from "./Main.tsx";
 import Products from "./Products.tsx";
 import Contact from "./Contact.tsx";
 import Partners from "./Partners.tsx"
+import Keshilla from "./Keshilla.tsx";
 import Mossi from "./products/Mossi.tsx";
 import Bronho from "./products/Bronho.tsx";
 import Carbo from "./products/Carbo.tsx";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/partners" element={<Partners />} />
+        <Route path="/keshilla" element={<Keshilla />} />
         <Route path="/mossi" element={<Mossi />} />
         <Route path="/bronho" element={<Bronho />} />
         <Route path="/carbo" element={<Carbo />} />
