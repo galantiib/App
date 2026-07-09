@@ -16,7 +16,7 @@ const Mossi = () => {
   const [error, setError] = useState<string | null>(null);
 
 const productImages: Record<number, string> = {
-  1: "/app/partners/pictures/vitamin.png",
+  1: "/app/partners/pictures/mossi1.jpg",
   2: "/app/partners/pictures/hairloss.jpeg",
   3: "/app/partners/pictures/hairlosswomen.png",
   4: "/app/partners/pictures/6monthset.png",

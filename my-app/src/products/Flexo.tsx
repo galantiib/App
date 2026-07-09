@@ -16,9 +16,8 @@ const Flexo = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    16: "/app/partners/pictures/flexo.png",
-    17: "/app/partners/pictures/flexokapsula.png",
-    18: "/app/partners/pictures/flexogranula.png",
+    17: "/app/partners/pictures/flexo1.jpg",
+    18: "/app/partners/pictures/flexo2.jpg",
   };
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Layout } from "./Layout.tsx";
 
 const slides = [
@@ -34,6 +34,13 @@ const About = () => {
   const slideCount = slides.length;
   const previousSlide = () => setIndex((current) => (current + slideCount - 1) % slideCount);
   const nextSlide = () => setIndex((current) => (current + 1) % slideCount);
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setIndex((current) => (current + 1) % slides.length);
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <Layout>
@@ -53,7 +60,7 @@ const About = () => {
         <div className="about-panel" aria-label="Pikat kryesore">
           <img src="/ozzo.png" alt="" className="about-logo" />
           <div>
-            <strong>Portofoli i hulumtuar</strong>
+            <strong>Katalog i hulumtuar</strong>
             <span>Produkte të zgjedhura për cilësi, siguri dhe vlerë klinike.</span>
           </div>
         </div>
@@ -70,7 +77,7 @@ const About = () => {
 
       <section className="sectiong">
         <h2 className="ozzo3">
-          Rreth <span className="ozzo2">Ozzo</span>Pharm
+          Rreth <span className="ozzo2">ozzo</span>pharm
         </h2>
         <p>
           Zhvillimi ynë i bazuar në kërkime siguron që çdo produkt të përmbushë

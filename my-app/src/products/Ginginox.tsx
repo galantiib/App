@@ -15,12 +15,10 @@ const Ginginox = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // ✅ Image mapping for Ginginox products
+
   const productImages: Record<number, string> = {
-    25: "/app/partners/pictures/ginginox.png",
-    26: "/app/partners/pictures/ginginoxspray.png",
-    27: "/app/partners/pictures/ginginoxgel.png",
-    28: "/app/partners/pictures/gintretesie.png",
+    25: "/app/partners/pictures/ging1.jpg",
+    27: "/app/partners/pictures/ging2.jpg",
   };
 
   useEffect(() => {

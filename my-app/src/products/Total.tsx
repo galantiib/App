@@ -10,26 +10,25 @@ interface Product {
   price: number;
 }
 
-const Forvax = () => {
+const Total = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const productImages : Record<number, string> = {
-    50: "/app/partners/pictures/forvax.jpg"
+    49: "/app/partners/pictures/total.jpg"
   };
 
   useEffect(() => {
-    const fetchForvaxProducts = async () => {
+    const fetchVenoMaxProducts = async () => {
       try {
         const response = await fetch(
-          "https://localhost:7132/api/products/by-name?keyword=Forvax"
+          "https://localhost:7132/api/products/by-name?keyword=Prenatal"
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch Forvax products");
+          throw new Error("Failed to fetch Prenatal products");
         }
-
         const data: Product[] = await response.json();
         setProducts(data);
       } catch (err) {
@@ -40,11 +39,11 @@ const Forvax = () => {
       }
     };
 
-    fetchForvaxProducts();
+    fetchVenoMaxProducts();
   }, []);
 
   if (loading) {
-    return <p>Loading ForvaxC products...</p>;
+    return <p>Loading Prenatal products...</p>;
   }
 
   if (error) {
@@ -56,7 +55,7 @@ const Forvax = () => {
       <section className="section1">
         <div>
           <ProductBackButton />
-          <h1 className="allh1">Forvax C Products</h1>
+          <h1 className="allh1">Prenatal Total Products</h1>
 
           {products.length === 0 && <p>No products found.</p>}
 
@@ -70,7 +69,6 @@ const Forvax = () => {
                   borderRadius: "8px",
                   display: "flex",
                   gap: "20px",
-                  // alignItems: "flex-start",
                 }}
               >
                 <img
@@ -80,7 +78,7 @@ const Forvax = () => {
                   }
                   alt={product.name}
                   style={{
-                    width: "300px",
+                    width: "",
                     height: "auto",
                     borderRadius: "8px",
                   }}
@@ -105,4 +103,4 @@ const Forvax = () => {
   );
 };
 
-export default Forvax;
+export default Total;

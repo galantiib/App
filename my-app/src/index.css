@@ -24,24 +24,26 @@
   letter-spacing: 0;
 }
 
-html {
+ html {
   background: var(--bg);
-}
+} 
 
-body {
+
+
+ body {
   margin: 0;
   min-height: 100vh;
   background:
-    linear-gradient(180deg, #f7fcff 0%, #eaf8ff 44%, #f8fcff 100%);
+    linear-gradient(180deg, #ffffff 0%, #56c1f2 44%, #ffffff 100%);
   color: var(--text);
   overflow-x: hidden;
   line-height: 2.5;
-}
+} 
 
 body::selection {
   background: var(--secondary);
   color: var(--primary-dark);
-}
+} 
 
 button,
 input,
@@ -113,7 +115,7 @@ a {
 .brand-text span,
 .ozzo,
 .ozzo2 {
-  color: var(--primary);
+  font-size: larger;
 }
 
 .site-nav {

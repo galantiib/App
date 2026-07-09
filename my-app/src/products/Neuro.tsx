@@ -16,7 +16,7 @@ const Neuro = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages : Record<number, string> = {
-    36: "/app/partners/pictures/neuro.png"
+    36: "/app/partners/pictures/neuro.jpg"
   };
 
   useEffect(() => {

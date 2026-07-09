@@ -21,7 +21,7 @@ export const Layout = ({ children }: LayoutProps) => {
           <NavLink to="/about" className="site-logo" aria-label="Ozzo Pharm">
             <img src="/app/ozzo.png" alt="" className="logo-mark" />
             <span className="brand-text">
-              <span>Ozzo</span>Pharm
+              <span>ozzo</span>pharm
             </span>
           </NavLink>
 

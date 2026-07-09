@@ -10,24 +10,25 @@ interface Product {
   price: number;
 }
 
-const Forvax = () => {
+const Sinu = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const productImages : Record<number, string> = {
-    50: "/app/partners/pictures/forvax.jpg"
-  };
+const productImages: Record<number, string> = {
+  47: "/app/partners/pictures/sinu.jpg",
+
+};
 
   useEffect(() => {
-    const fetchForvaxProducts = async () => {
+    const fetchMossiLondonProducts = async () => {
       try {
         const response = await fetch(
-          "https://localhost:7132/api/products/by-name?keyword=Forvax"
+          "https://localhost:7132/api/products/by-name?keyword=Sinu"
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch Forvax products");
+          throw new Error("Failed to fetch SinuSil products");
         }
 
         const data: Product[] = await response.json();
@@ -40,11 +41,11 @@ const Forvax = () => {
       }
     };
 
-    fetchForvaxProducts();
+    fetchMossiLondonProducts();
   }, []);
 
   if (loading) {
-    return <p>Loading ForvaxC products...</p>;
+    return <p>Loading SinuSil products...</p>;
   }
 
   if (error) {
@@ -56,7 +57,7 @@ const Forvax = () => {
       <section className="section1">
         <div>
           <ProductBackButton />
-          <h1 className="allh1">Forvax C Products</h1>
+          <h1 className="allh1">SinuSil Products</h1>
 
           {products.length === 0 && <p>No products found.</p>}
 
@@ -70,19 +71,20 @@ const Forvax = () => {
                   borderRadius: "8px",
                   display: "flex",
                   gap: "20px",
-                  // alignItems: "flex-start",
+                  // alignItems: "",
                 }}
               >
                 <img
-                  src={
-                    productImages[product.id] ||
-                    "/app/partners/pictures/default.png"
-                  }
+                 src={
+                  productImages[product.id] ||
+                  "/app/partners/pictures/default.png"
+                }
                   alt={product.name}
                   style={{
-                    width: "300px",
-                    height: "auto",
-                    borderRadius: "8px",
+                    width: product.id === 1 ? "350px" : "280px",
+                    height: product.id === 1 ? "450px" : "380px",
+                    borderRadius: product.id === 1 ? "20px" : "8px",
+                    objectFit: "contain",
                   }}
                 />
 
@@ -105,4 +107,4 @@ const Forvax = () => {
   );
 };
 
-export default Forvax;
+export default Sinu;

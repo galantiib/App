@@ -16,7 +16,7 @@ const DotSpot = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages : Record<number, string> = {
-    15: "/app/partners/pictures/dotspot.png"
+    15: "/app/partners/pictures/dotspot.jpg"
   };
 
   useEffect(() => {

@@ -16,9 +16,7 @@ const MiVita = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    33: "/app/partners/pictures/mivita.png",
-    34: "/app/partners/pictures/mivitagranula.png",
-    35: "/app/partners/pictures/mivitatableta.png",
+    33: "/app/partners/pictures/mivita.jpg",
   };
 
   useEffect(() => {
