@@ -16,8 +16,8 @@ const Bronho = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    6: "/app/partners/pictures/bronho1.jpg",
-    7: "/app/partners/pictures/bronho2.jpg",
+    6: "/app/partners/pictures/surup1.png",
+    7: "/app/partners/pictures/surupkids.png",
   };
 
   useEffect(() => {

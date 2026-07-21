@@ -18,7 +18,7 @@ const Ginginox = () => {
 
   const productImages: Record<number, string> = {
     25: "/app/partners/pictures/ging1.jpg",
-    27: "/app/partners/pictures/ging2.jpg",
+    27: "/app/partners/pictures/ginginoxgel.png",
   };
 
   useEffect(() => {

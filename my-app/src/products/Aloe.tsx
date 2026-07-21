@@ -16,7 +16,7 @@ const AloeVera = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages : Record<number, string> = {
-    45: "/app/partners/pictures/aloe.jpg"
+    45: "/app/partners/pictures/aloe.png"
   };
 
   useEffect(() => {

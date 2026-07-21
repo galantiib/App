@@ -17,7 +17,7 @@ const Flexo = () => {
 
   const productImages: Record<number, string> = {
     17: "/app/partners/pictures/flexo1.jpg",
-    18: "/app/partners/pictures/flexo2.jpg",
+    18: "/app/partners/pictures/flexogranula.png",
   };
 
   useEffect(() => {

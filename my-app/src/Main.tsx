@@ -37,7 +37,7 @@ const About = () => {
   useEffect(() => {
   const interval = setInterval(() => {
     setIndex((current) => (current + 1) % slides.length);
-  }, 3000);
+  }, 2000);
 
   return () => clearInterval(interval);
 }, []);

@@ -16,7 +16,7 @@ const Carbo = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages: Record<number, string> = {
-    12: "/app/partners/pictures/carbo1.jpg",
+    12: "/app/partners/pictures/carbogranula.png",
   };
 
   useEffect(() => {

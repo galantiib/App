@@ -16,7 +16,7 @@ const Rexidro = () => {
   const [error, setError] = useState<string | null>(null);
 
   const productImages : Record<number, string> = {
-    39: "/app/partners/pictures/rexidro.jpg"
+    39: "/app/partners/pictures/rexidro.png"
   };
 
   useEffect(() => {

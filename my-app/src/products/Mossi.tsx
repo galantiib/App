@@ -17,10 +17,10 @@ const Mossi = () => {
 
 const productImages: Record<number, string> = {
   1: "/app/partners/pictures/mossi1.jpg",
-  2: "/app/partners/pictures/hairloss.jpeg",
-  3: "/app/partners/pictures/hairlosswomen.png",
+  2: "/app/partners/pictures/mossi2.jpg",
+  3: "/app/partners/pictures/mossi3.jpg",
   4: "/app/partners/pictures/6monthset.png",
-  5: "/app/partners/pictures/3monthset.png",
+  5: "/app/partners/pictures/mossi5.jpg",
 };
 
   useEffect(() => {
