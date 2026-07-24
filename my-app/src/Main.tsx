@@ -1,72 +1,122 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Layout } from "./Layout.tsx";
+
+const publicAsset = (path: string) => `/App${path}`;
 
 const slides = [
   {
     eyebrow: "Kujdes i certifikuar",
-    title: "Misioni Ynë",
-    text: "Të ofrojmë produkte farmaceutike të sigurta, efektive dhe të certifikuara ndërkombëtarisht që përmirësojnë jetën e pacientëve.",
+    title: "Misioni Yne",
+    text: "Te ofrojme produkte farmaceutike te sigurta, efektive dhe te certifikuara nderkombetarisht qe permiresojne jeten e pacienteve.",
     metric: "Standarde GMP",
   },
   {
     eyebrow: "Rritje rajonale",
     title: "Vizioni",
-    text: "Të bëhemi një lider rajonal në industrinë farmaceutike përmes inovacionit dhe standardeve të larta shkencore.",
+    text: "Te behemi nje lider rajonal ne industrine farmaceutike permes inovacionit.",
     metric: "Partneritet shkencor",
   },
   {
-    eyebrow: "Besim afatgjatë",
+    eyebrow: "Besim afatgjate",
     title: "Vlerat",
-    text: "Integritet, cilësi, transparencë dhe përkushtim maksimal ndaj shëndetit të njeriut.",
-    metric: "Cilësi pa kompromis",
+    text: "Integritet, cilesi, transparence dhe perkushtim maksimal ndaj shendetit te njeriut ne cdo vendim qe marrim.",
+    metric: "Cilesi pa kompromis",
+  },
+  {
+    eyebrow: "Inovacion dhe zhvillim",
+    title: "E Ardhmja",
+    text: "Te investojme vazhdimisht ne kerkime dhe zhvillim per te sjelle zgjidhje moderne qe permbushin nevojat e pacienteve.",
+    metric: "Inovacion i vazhdueshem",
   },
 ];
 
 const highlights = [
-  { value: "20+", label: "produkte në portofol" },
-  { value: "5", label: "partnerë strategjikë" },
+  { value: "20+", label: "produkte ne portofol" },
+  { value: "5", label: "partnere strategjike" },
   { value: "GMP", label: "standard prodhimi" },
+];
+
+const pillars = [
+  {
+    number: "01",
+    title: "Cilesi e kontrolluar",
+    text: "Produktet zgjidhen me fokus ne standarde prodhimi, dokumentacion te qarte dhe vlere te matshme per pacientin.",
+  },
+  {
+    number: "02",
+    title: "Partneritet profesional",
+    text: "Bashkepunojme me prodhues dhe profesioniste shendetesore qe ndajne te njejtin nivel pergjegjesie ndaj tregut.",
+  },
+  {
+    number: "03",
+    title: "Portofol i kuruar",
+    text: "Katalogu ndertohet rreth kategorive praktike, nga mireqenia dhe kujdesi ditor deri te mbeshtetja specifike shendetesore.",
+  },
+];
+
+const commitments = [
+  "Produkte te certifikuara dhe te dokumentuara qarte",
+  "Bashkepunim me partnere te verifikuar nderkombetare",
+  "Qasje profesionale ndaj nevojave te tregut shendetesor",
+];
+
+const partnerLogos = [
+  publicAsset("/partners/mossi.png"),
+  publicAsset("/partners/atilim.png"),
+  publicAsset("/partners/hamapharm.png"),
+  publicAsset("/partners/ozone.png"),
 ];
 
 const About = () => {
   const [index, setIndex] = useState(0);
   const activeSlide = slides[index];
   const slideCount = slides.length;
-  const previousSlide = () => setIndex((current) => (current + slideCount - 1) % slideCount);
-  const nextSlide = () => setIndex((current) => (current + 1) % slideCount);
-  useEffect(() => {
-  const interval = setInterval(() => {
-    setIndex((current) => (current + 1) % slides.length);
-  }, 2000);
 
-  return () => clearInterval(interval);
-}, []);
+  const previousSlide = () =>
+    setIndex((current) => (current + slideCount - 1) % slideCount);
+  const nextSlide = () => setIndex((current) => (current + 1) % slideCount);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setIndex((current) => (current + 1) % slides.length);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   return (
     <Layout>
       <section className="about-hero">
         <div className="about-copy">
           <span className="eyebrow">Ozzo Pharm</span>
-          <h2>
-            Kujdes farmaceutik me standard të lartë dhe fokus te pacienti.
-          </h2>
+          <h2>Kujdes farmaceutik me standard te larte dhe fokus tek pacienti.</h2>
           <p>
-            Ozzo Pharm është një kompani farmaceutike e përkushtuar për të çuar
-            përpara kujdesin shëndetësor përmes inovacionit, integritetit
-            shkencor dhe produkteve të sigurta.
+            Ozzo Pharm eshte kompani farmaceutike e fokusuar ne produkte te
+            sigurta, partnere te besueshem dhe sherbim profesional per tregun
+            shendetesor ne Kosove.
           </p>
+          <div className="about-hero-actions" aria-label="Veprime kryesore">
+            <Link to="/products">Shiko produktet</Link>
+            <Link to="/partners">Partneret tane</Link>
+          </div>
         </div>
 
-        <div className="about-panel" aria-label="Pikat kryesore">
-          <img src="/ozzo.png" alt="" className="about-logo" />
-          <div>
-            <strong>Katalog i hulumtuar</strong>
-            <span>Produkte të zgjedhura për cilësi, siguri dhe vlerë klinike.</span>
+        <div className="about-visual" aria-label="Ozzo Pharm">
+          <div className="about-logo-frame">
+            <img src={publicAsset("/ozzo.png")} alt="Ozzo Pharm" />
+          </div>
+          <div className="about-visual-note">
+            <strong>Shendeti i pari</strong>
+            <span>
+              Nje portofol i zgjedhur me kujdes per cilesi, siguri dhe
+              besueshmeri afatgjate.
+            </span>
           </div>
         </div>
       </section>
 
-      <section className="highlights-grid" aria-label="Përmbledhje">
+      <section className="highlights-grid" aria-label="Permbledhje">
         {highlights.map((item) => (
           <div className="highlight-card" key={item.label}>
             <strong>{item.value}</strong>
@@ -75,30 +125,60 @@ const About = () => {
         ))}
       </section>
 
-      <section className="sectiong">
-        <h2 className="ozzo3">
-          Rreth <span className="ozzo2">ozzo</span>pharm
-        </h2>
-        <p>
-          Zhvillimi ynë i bazuar në kërkime siguron që çdo produkt të përmbushë
-          standardet rregullatore ndërkombëtare dhe të ofrojë vlerë të matshme
-          për pacientin.
-        </p>
-        <p>
-          Ne bashkëpunojmë ngushtë me profesionistë të kujdesit shëndetësor për
-          të përmirësuar jetën përmes ilaçeve të sigurta, efektive dhe të arritshme.
-        </p>
+      <section className="about-story">
+        <div className="about-story-copy">
+          <span className="eyebrow">Rreth nesh</span>
+          <h2>Nje kompani e ndertuar mbi besim, pergjegjesi dhe standard.</h2>
+          <p>
+            Zhvillimi yne bazohet ne perzgjedhje te kujdesshme, dokumentacion te
+            qarte dhe produkte qe permbushin pritshmeri profesionale.
+          </p>
+          <p>
+            Ne punojme ngushte me profesioniste dhe partnere te certifikuar per
+            te sjelle zgjidhje praktike, te sigurta dhe te arritshme.
+          </p>
+        </div>
+
+        <div className="about-partner-panel" aria-label="Partnere">
+          {partnerLogos.map((logo) => (
+            <div key={logo}>
+              <img src={logo} alt="" />
+            </div>
+          ))}
+        </div>
       </section>
 
-      <section className="carousel-section" aria-label="Vlerat kryesore të Ozzo Pharm">
+      <section className="about-pillars" aria-label="Cfare na dallon">
+        {pillars.map((pillar) => (
+          <article className="about-pillar-card" key={pillar.title}>
+            <span>{pillar.number}</span>
+            <h3>{pillar.title}</h3>
+            <p>{pillar.text}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="about-commitments" aria-label="Angazhimet tona">
+        <div>
+          <span className="eyebrow">Angazhimi yne</span>
+          <h2>Cdo zgjedhje ne katalog duhet te kete arsye te qarte.</h2>
+        </div>
+        <ul>
+          {commitments.map((commitment) => (
+            <li key={commitment}>{commitment}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="carousel-section" aria-label="Vlerat kryesore te Ozzo Pharm">
         <div className="carousel">
           <button
             className="carousel-arrow left"
             type="button"
-            aria-label="Shfaq sliden e mëparshëm"
+            aria-label="Shfaq sliden e meparshem"
             onClick={previousSlide}
           >
-            ‹
+            {"⬅"}
           </button>
 
           <article className="carousel-card">
@@ -107,7 +187,8 @@ const About = () => {
               <span style={{ width: `${((index + 1) / slideCount) * 100}%` }} />
             </div>
             <div className="carousel-count">
-              {String(index + 1).padStart(2, "0")} / {String(slideCount).padStart(2, "0")}
+              {String(index + 1).padStart(2, "0")} /{" "}
+              {String(slideCount).padStart(2, "0")}
             </div>
             <h3>{activeSlide.title}</h3>
             <p>{activeSlide.text}</p>
@@ -117,10 +198,10 @@ const About = () => {
           <button
             className="carousel-arrow right"
             type="button"
-            aria-label="Shfaq sliden tjetër"
+            aria-label="Shfaq sliden tjeter"
             onClick={nextSlide}
           >
-            ›
+            {"➡"}
           </button>
         </div>
 

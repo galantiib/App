@@ -1,112 +1,19 @@
-import { useEffect, useState } from "react";
-import { Layout } from "../Layout.tsx";
-import ProductBackButton from "./ProductBackButton.tsx";
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  components: string;
-  price: number;
-}
+import ProductDetailPage from "./ProductDetailPage.tsx";
 
 const Mossi = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-const productImages: Record<number, string> = {
-  1: "/app/partners/pictures/mossi1.jpg",
-  2: "/app/partners/pictures/mossi2.jpg",
-  3: "/app/partners/pictures/mossi3.jpg",
-  4: "/app/partners/pictures/6monthset.png",
-  5: "/app/partners/pictures/mossi5.jpg",
-};
-
-  useEffect(() => {
-    const fetchMossiLondonProducts = async () => {
-      try {
-        const response = await fetch(
-          "https://localhost:7132/api/products/by-name?keyword=Mossi"
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch Mossi London products");
-        }
-
-        const data: Product[] = await response.json();
-        setProducts(data);
-      } catch (err) {
-        setError("Something went wrong while loading products.");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchMossiLondonProducts();
-  }, []);
-
-  if (loading) {
-    return <p>Loading Mossi London products...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
   return (
-    <Layout>
-      <section className="section1">
-        <div>
-          <ProductBackButton />
-          <h1 className="allh1">The Mossi London Products</h1>
-
-          {products.length === 0 && <p>No products found.</p>}
-
-          <div style={{ display: "grid", gap: "16px" }}>
-            {products.map((product) => (
-              <div
-                key={product.id}
-                style={{
-                  border: "1px solid #ccc",
-                  padding: "16px",
-                  borderRadius: "8px",
-                  display: "flex",
-                  gap: "20px",
-                  // alignItems: "",
-                }}
-              >
-                <img
-                 src={
-                  productImages[product.id] ||
-                  "/app/partners/pictures/default.png"
-                }
-                  alt={product.name}
-                  style={{
-                    width: product.id === 1 ? "350px" : "280px",
-                    height: product.id === 1 ? "450px" : "380px",
-                    borderRadius: product.id === 1 ? "20px" : "8px",
-                    objectFit: "contain",
-                  }}
-                />
-
-                <div>
-                  <h3 className="allh3">{product.name}</h3>
-                  <p>{product.description}</p>
-                  <p>
-                    <strong>Components:</strong> {product.components}
-                  </p>
-                  <p>
-                    <strong>Price:</strong> {product.price.toFixed(2)} €
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </Layout>
+    <ProductDetailPage
+      title="The Mossi London Products"
+      keyword="Mossi"
+      category="Kujdesi per floket"
+      productImages={{
+        1: `${process.env.PUBLIC_URL}/partners/pictures/mossi1.jpg`,
+        2: `${process.env.PUBLIC_URL}/partners/pictures/mossi2.jpg`,
+        3: `${process.env.PUBLIC_URL}/partners/pictures/mossi3.jpg`,
+        4: `${process.env.PUBLIC_URL}/partners/pictures/6monthset.png`,
+        5: `${process.env.PUBLIC_URL}/partners/pictures/mossi5.jpg`,
+      }}
+    />
   );
 };
 

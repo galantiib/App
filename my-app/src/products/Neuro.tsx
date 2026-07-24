@@ -1,106 +1,15 @@
-import { useEffect, useState } from "react";
-import { Layout } from "../Layout.tsx";
-import ProductBackButton from "./ProductBackButton.tsx";
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  components: string;
-  price: number;
-}
+import ProductDetailPage from "./ProductDetailPage.tsx";
 
 const Neuro = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const productImages : Record<number, string> = {
-    36: "/app/partners/pictures/neuro.jpg"
-  };
-
-  useEffect(() => {
-    const fetchNeurospinProducts = async () => {
-      try {
-        const response = await fetch(
-          "https://localhost:7132/api/products/by-name?keyword=Neurospin"
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch Neurospin products");
-        }
-
-        const data: Product[] = await response.json();
-        setProducts(data);
-      } catch (err) {
-        setError("Something went wrong while loading products.");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNeurospinProducts();
-  }, []);
-
-  if (loading) {
-    return <p>Loading Neurospin products...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
-   return (
-    <Layout>
-      <section className="section1">
-        <div>
-          <ProductBackButton />
-          <h1 className="allh1">Neurospin Products</h1>
-
-          {products.length === 0 && <p>No products found.</p>}
-
-          <div style={{ display: "grid", gap: "16px" }}>
-            {products.map((product) => (
-              <div
-                key={product.id}
-                style={{
-                  border: "1px solid #ccc",
-                  padding: "16px",
-                  borderRadius: "8px",
-                  display: "flex",
-                  gap: "20px",
-                }}
-              >
-                <img
-                  src={
-                    productImages[product.id] ||
-                    "/app/partners/pictures/default.png"
-                  }
-                  alt={product.name}
-                  style={{
-                    width: "",
-                    height: "auto",
-                    borderRadius: "8px",
-                  }}
-                />
-
-                <div>
-                  <h3 className="allh3">{product.name}</h3>
-                  <p>{product.description}</p>
-                  <p>
-                    <strong>Components:</strong> {product.components}
-                  </p>
-                  <p>
-                    <strong>Price:</strong> {product.price.toFixed(2)} €
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </Layout>
+  return (
+    <ProductDetailPage
+      title="Neurospin Products"
+      keyword="Neurospin"
+      category="Mbeshtetje nervore"
+      productImages={{
+        36: `${process.env.PUBLIC_URL}/partners/pictures/neuro.jpg`,
+      }}
+    />
   );
 };
 

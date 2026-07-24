@@ -2,6 +2,180 @@
 > my-app@0.1.0 start
 > react-scripts start
 
-Something is already running on port 3000.
+Starting the development server...
 
-C:\Users\KuBIT-PC\Desktop\App\my-app>
+Compiled successfully!
+
+You can now view my-app in the browser.
+
+  Local:            http://localhost:3001/App
+  On Your Network:  http://192.168.2.42:3001/App
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './Main.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m5:0-31[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Main.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './Partners.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m8:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Partners.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './Keshilla.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m9:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Keshilla.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './Contact.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m7:0-36[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Contact.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './App.js' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'
+[1m[31mERROR[39m[22m in [1m./src/index.js[39m[22m [1m[32m8:0-27[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './App.js' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './Layout.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'
+[1m[31mERROR[39m[22m in [1m./src/Contact.tsx[39m[22m [1m[32m4:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Layout.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Keshilla.tsx[39m[22m [1m[32m4:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Layout.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Locations.tsx[39m[22m [1m[32m6:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Layout.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Main.tsx[39m[22m [1m[32m7:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Layout.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Partners.tsx[39m[22m [1m[32m4:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Layout.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Products.tsx[39m[22m [1m[32m6:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Layout.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/products/ProductDetailPage.tsx[39m[22m [1m[32m6:0-39[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '../Layout.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src\products'[39m[22m
+
+webpack compiled with [1m[31m7 errors[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './Main.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m5:0-31[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './Main.tsx' in 'C:\Users\KuBIT-PC\Desktop\App\my-app\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
