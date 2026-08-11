@@ -178,7 +178,7 @@ const About = () => {
             aria-label="Shfaq sliden e meparshem"
             onClick={previousSlide}
           >
-            {"⬅"}
+            {"<"}
           </button>
 
           <article className="carousel-card">
@@ -201,7 +201,7 @@ const About = () => {
             aria-label="Shfaq sliden tjeter"
             onClick={nextSlide}
           >
-            {"➡"}
+            {">"}
           </button>
         </div>
 

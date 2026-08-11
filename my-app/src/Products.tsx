@@ -39,12 +39,6 @@ const products = [
     image: `${process.env.PUBLIC_URL}/partners/pictures/sinu.jpg`,
   },
   {
-    name: "Boulardii Family",
-    route: "/lardii",
-    category: "Suplement ushqimor probiotik",
-    image: `${process.env.PUBLIC_URL}/partners/pictures/lardii.jpg`,
-  },
-  {
     name: "Prenatal Total",
     route: "/total",
     category: "Suplement ushqimor prenatal",

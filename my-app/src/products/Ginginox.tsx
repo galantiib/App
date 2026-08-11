@@ -9,6 +9,7 @@ const Ginginox = () => {
       productImages={{
         25: `${process.env.PUBLIC_URL}/partners/pictures/ging1.jpg`,
         27: `${process.env.PUBLIC_URL}/partners/pictures/ginginoxgel.png`,
+        52: `${process.env.PUBLIC_URL}/partners/pictures/gingtretesire.png`
       }}
     />
   );

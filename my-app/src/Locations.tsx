@@ -3,26 +3,42 @@ import { Layout } from "./Layout.tsx";
 
 const locations = [
   {
-    name: "OZZO Pharm",
-    type: "Kompani farmaceutike",
-    address: "Rr. Ferid Curri, pn, Pristina, Kosovo",
+    name: "OZZO Pharm - Head Office",
+    type: "Zyre qendrore",
+    city: "Prishtine",
+    address: "Arberi, Rr Ferid Curri, Prishtina 10000",
+    phone: "+383 44 256 193",
+    mapQuery: "OZZO Pharm, Rr Ferid Curri, Prishtina 10000, Kosovo",
     coordinates: [42.6609, 21.1546],
-    source: "https://www.findglocal.com/XK/Pristina/101540996313458/OZZO-Pharm",
   },
   {
-    name: "OZONE Hair Clinic",
+    name: "OZONE HAIR CLINIC SH.P.K.",
     type: "Klinike per floke",
-    address: "Lagja Arberia, Rruga Vicianum pn, Pristina, Kosovo",
+    city: "Prishtine",
+    address: "Lagjja Arberia, Rruga Vicianum, p.n.",
+    phone: "+383 44 411 412",
+    mapQuery:
+      "OZONE Hair Clinic, Lagjja Arberia, Rruga Vicianum, Prishtina, Kosovo",
     coordinates: [42.6652, 21.1485],
-    source:
-      "https://www.findhealthclinics.org/XK/Pristina/200505470650484/OZONE-Hair-Clinic",
   },
   {
-    name: "OZONE Pharmacy",
+    name: "OZONE Pharmacy - Prishtine",
     type: "Barnatore",
-    address: "Lagja Arberia, Rruga Vicianum pn, Pristina, Kosovo",
+    city: "Prishtine",
+    address: "Lagjja Arberia, Rruga Vicianum, p.n.",
+    phone: "+383 45 411 412",
+    mapQuery:
+      "OZONE Pharmacy, Lagjja Arberia, Rruga Vicianum, Prishtina, Kosovo",
     coordinates: [42.665, 21.1489],
-    source: "https://www.findglocal.com/XK/Pristina/245338-14/22",
+  },
+  {
+    name: "OZONE Pharmacy - Mitrovice",
+    type: "Barnatore",
+    city: "Mitrovice",
+    address: "Rruga Bislim Bajgora, nr. 5",
+    phone: "+383 48 411 412",
+    mapQuery: "OZONE Pharmacy, Rruga Bislim Bajgora nr. 5, Mitrovica, Kosovo",
+    coordinates: [42.89438, 20.87253],
   },
 ];
 
@@ -62,8 +78,10 @@ const loadLeaflet = () => {
   });
 };
 
-const getMapUrl = (address: string) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+const getMapUrl = (query: string) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+
+const getPhoneUrl = (phone: string) => `tel:${phone.replace(/\s+/g, "")}`;
 
 const Locations = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
@@ -92,7 +110,7 @@ const Locations = () => {
         const markers = locations.map((location) => {
           const marker = L.marker(location.coordinates).addTo(map);
           marker.bindPopup(
-            `<strong>${location.name}</strong><br />${location.address}`
+            `<strong>${location.name}</strong><br />${location.city}<br />${location.address}<br />${location.phone}`
           );
           return marker;
         });
@@ -121,14 +139,14 @@ const Locations = () => {
           <span className="eyebrow">Lokacionet</span>
           <h2>Gjeni OZZO Pharm, OZONE Hair Clinic dhe OZONE Pharmacy ne harte.</h2>
           <p>
-            Kjo faqe mbledh lokacionet kryesore ne Prishtine, me adresa te
+            Kjo faqe mbledh lokacionet kryesore ne Kosove, me adresa te
             qarta, karta informuese dhe lidhje direkte per navigim.
           </p>
         </div>
 
         <div className="locations-summary" aria-label="Permbledhje lokacionesh">
           <strong>{locations.length}</strong>
-          <span>lokacione te listuara ne Prishtine</span>
+          <span>lokacione te listuara ne Kosove</span>
         </div>
       </section>
 
@@ -146,14 +164,18 @@ const Locations = () => {
               <div>
                 <span className="location-type">{location.type}</span>
                 <h3>{location.name}</h3>
+                <strong className="location-city">{location.city}</strong>
                 <p>{location.address}</p>
+                <a className="location-phone" href={getPhoneUrl(location.phone)}>
+                  {location.phone}
+                </a>
               </div>
               <div className="location-actions">
-                <a href={getMapUrl(location.address)} target="_blank" rel="noreferrer">
+                <a href={getMapUrl(location.mapQuery)} target="_blank" rel="noreferrer">
                   Hap ne Google Maps
                 </a>
-                <a href={location.source} target="_blank" rel="noreferrer">
-                  Burimi
+                <a href={getPhoneUrl(location.phone)}>
+                  Telefono
                 </a>
               </div>
             </article>

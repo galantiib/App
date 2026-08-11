@@ -19,7 +19,6 @@ import Magnez from "./products/Magnez.tsx";
 import UriBlock from "./products/UriBlock.tsx";
 import Aloe from "./products/Aloe.tsx";
 import Sinu from "./products/Sinu.tsx";
-import Lardii from "./products/Lardii.tsx";
 import Total from "./products/Total.tsx";
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
       <Route path="/uriblock" element={<UriBlock />} />
       <Route path="/aloe" element={<Aloe />} />
       <Route path="/sinu" element={<Sinu />} />
-      <Route path="/lardii" element={<Lardii />} />
       <Route path="/total" element={<Total />} />
     </Routes>
   );
