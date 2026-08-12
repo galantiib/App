@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../Layout.tsx";
+import { apiBaseUrl } from "../config.ts";
 import ProductBackButton from "./ProductBackButton.tsx";
 
 interface Product {
@@ -37,7 +38,7 @@ const ProductDetailPage = ({
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          `https://localhost:7132/api/products/by-name?keyword=${encodeURIComponent(
+          `${apiBaseUrl}/api/products/by-name?keyword=${encodeURIComponent(
             keyword
           )}`,
           { signal: controller.signal }
