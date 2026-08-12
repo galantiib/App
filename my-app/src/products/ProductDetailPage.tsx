@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../Layout.tsx";
-import { apiBaseUrl } from "../config.ts";
+import { apiBaseUrl, shouldUseBackendApi, staticProductsUrl } from "../config.ts";
 import ProductBackButton from "./ProductBackButton.tsx";
 
 interface Product {
@@ -20,6 +20,14 @@ interface ProductDetailPageProps {
 
 const fallbackImage = `${process.env.PUBLIC_URL}/ozzo.png`;
 
+const findProductsByKeyword = (products: Product[], keyword: string) => {
+  const normalizedKeyword = keyword.trim().toLowerCase();
+
+  return products.filter((product) =>
+    product.name.toLowerCase().includes(normalizedKeyword)
+  );
+};
+
 const ProductDetailPage = ({
   title,
   keyword,
@@ -35,26 +43,58 @@ const ProductDetailPage = ({
     const controller = new AbortController();
     const timeoutId = window.setTimeout(() => controller.abort(), 12000);
 
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(
-          `${apiBaseUrl}/api/products/by-name?keyword=${encodeURIComponent(
-            keyword
-          )}`,
-          { signal: controller.signal }
-        );
+    const fetchFromApi = async () => {
+      const response = await fetch(
+        `${apiBaseUrl}/api/products/by-name?keyword=${encodeURIComponent(
+          keyword
+        )}`,
+        { signal: controller.signal }
+      );
 
-        if (!response.ok) {
-          throw new Error(`Failed to fetch ${title}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${title}`);
+      }
+
+      return response.json() as Promise<Product[]>;
+    };
+
+    const fetchFromStaticData = async () => {
+      const response = await fetch(staticProductsUrl, { signal: controller.signal });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch static product data");
+      }
+
+      const data = (await response.json()) as Product[];
+      return findProductsByKeyword(data, keyword);
+    };
+
+    const loadProducts = async () => {
+      try {
+        let data: Product[] = [];
+
+        if (shouldUseBackendApi) {
+          data = await fetchFromApi();
         }
 
-        const data: Product[] = await response.json();
+        if (data.length === 0) {
+          data = await fetchFromStaticData();
+        }
+
         if (isActive) {
           setProducts(data);
+          setError(null);
         }
       } catch (err) {
         if (isActive) {
-          setError("Something went wrong while loading products.");
+          try {
+            const data = await fetchFromStaticData();
+            setProducts(data);
+            setError(null);
+          } catch (fallbackErr) {
+            setError("Something went wrong while loading products.");
+            console.error(fallbackErr);
+          }
         }
         console.error(err);
       } finally {
@@ -65,7 +105,7 @@ const ProductDetailPage = ({
       }
     };
 
-    fetchProducts();
+    loadProducts();
 
     return () => {
       isActive = false;
